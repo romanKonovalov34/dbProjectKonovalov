@@ -1,0 +1,53 @@
+1.
+CREATE TABLE [dbo].[GTD](
+	[id_GTD] [int] NOT NULL,
+	[fuel] [varchar](65) NULL
+	[power] [real] NOT NULL,
+	[combustion_temp] [real] NOT NULL,
+	[KPD] [real] NOT NULL,
+	[rev] [int] NOT NULL
+	)
+
+2.
+CREATE TABLE [dbo].[cooling_system](
+	[id_System] [int] NOT NULL,
+	[vol_air] [real] NOT NULL,
+	[allowed_temp] [real] NOT NULL,
+	[KPD] [real] NOT NULL
+	)
+
+3.
+CREATE TABLE [dbo].[balloons_CO2](
+	[id_Balloon] [int] NOT NULL,
+	[volume] [real] NOT NULL,
+	[size] [real] NOT NULL,
+	[amount_of_balloons] [int] NOT NULL
+	)
+
+4.
+CREATE TABLE `cover` (
+  `id_Cover` INTEGER NOT NULL,
+  `id_GTD` INTEGER NOT NULL,
+  `id_Balloon` INTEGER NOT NULL,
+  `id_System` INTEGER NOT NULL,
+  `material` varchar(65) NOT NULL,
+  `width` double DEFAULT NULL,
+  `length` double DEFAULT NULL,
+  `height` double DEFAULT NULL,
+  `thickness` double DEFAULT NULL,
+  `hatch_radius` double DEFAULT NULL,
+  PRIMARY KEY (`id_Cover`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE [dbo].[cover](
+	[id_Cover] [int] NOT NULL,
+	[id_GTD] [int] NOT NULL,
+	[id_Balloon] [int] NOT NULL,
+	[id_System] [int] NOT NULL,
+	[material] [varchar](65) NULL
+	[width] [real] NOT NULL,
+	[length] [real] NOT NULL,
+	[height] [real] NOT NULL,
+	[thickness] [real] NOT NULL,
+	[hatch_radius] [real] NOT NULL
+	)
