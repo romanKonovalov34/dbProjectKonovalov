@@ -1,0 +1,43 @@
+1.
+CREATE TABLE `GTD` (
+  `id_GTD` int NOT NULL,
+  `fuel` varchar(65) NOT NULL,
+  `power` double DEFAULT NULL,
+  `combustion_temp` double DEFAULT NULL,
+  `KPD` double DEFAULT NULL,
+  `rev` int NULL,
+  PRIMARY KEY (`id_GTD`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+2.
+CREATE TABLE `cooling_system` (
+  `id_System` int NOT NULL,
+  `vol_air` double DEFAULT NULL,
+  `allowed_temp` double DEFAULT NULL,
+  `KPD` double DEFAULT NULL,
+  PRIMARY KEY (`id_System`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+3.
+CREATE TABLE `balloons_CO2` (
+  `id_Balloon` int NOT NULL,
+  `volume` double DEFAULT NULL,
+  `size` double DEFAULT NULL,
+  `amount_of_balloons` int DEFAULT NULL,
+  PRIMARY KEY (`id_Balloon`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+4.
+CREATE TABLE `cover` (
+  `id_Cover` int NOT NULL,
+  `id_GTD` int NOT NULL,
+  `id_Balloon` int NOT NULL,
+  `id_System` int NOT NULL,
+  `material` varchar(65) NOT NULL,
+  `width` double DEFAULT NULL,
+  `length` double DEFAULT NULL,
+  `height` double DEFAULT NULL,
+  `thickness` double DEFAULT NULL,
+  `hatch_radius` double DEFAULT NULL,
+  PRIMARY KEY (`id_Cover`),
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
